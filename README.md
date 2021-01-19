@@ -1,12 +1,12 @@
-# _Numbers To Words_
+# _Order Vendor Tracker_
 
-#### _Numbers to Words, 10/28/2020_
+#### _Order/Vendor, 1/19/21_
 
 #### By _Andrew Mickel_
 
 ## Description
 
-_This program will ask a user to input a number. The inputted number will be transformed and outputted into the alphabetical spelling of that number._
+_This is a program to simulate a tracker for baked goods, based on orders and the vendors that places them._
 
 ## Setup/Installation Requirements
 
