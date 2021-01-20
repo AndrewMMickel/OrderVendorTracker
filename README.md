@@ -16,8 +16,8 @@ _This is a program to simulate a tracker for baked goods, based on orders and th
 * _If the framework does not match above, update the version of your netcoreapp by changing the numbers. For example if you are using netcoreapp 3.1, change netcoreapp2.2 to netcoreapp3.1_
 * _In the terminal, cd into the NumberToWords.Tetst folder_
 * _Type in the terminal "dotnet restore"_
-* _To run the program, type cd into the "NumbersToWords" directory and type dotnet run in the terminal_
-* _The program should now be running_
+* _To run the program, type "cd VendorOrderTracker" into the terminal, then type "dotnet restore" in the terminal._
+* _After dotnet finishes restoring, type "dotnet run". The program should now be running_
 
 ## Known Bugs
 
