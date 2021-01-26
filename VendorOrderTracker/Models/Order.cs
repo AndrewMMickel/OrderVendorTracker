@@ -6,12 +6,12 @@ namespace VendorOrderTracker.Models
   {
     public string Title { get; set; }
     public string Description { get; set; }
-    public float Price { get; set; }
+    public int Price { get; set; }
     public string Date { get; set; }
     public int Id { get; }
-    private static List<Order> _instances = new List<Order> { };
-
-    public Order(string title, string description, float price, string date)
+    private static List<Order> _instances = new List<Order> {};
+  
+    public Order(string title, string description, int price, string date)
     {
       Title = title;
       Description = description;
@@ -21,19 +21,19 @@ namespace VendorOrderTracker.Models
       Id = _instances.Count;
     }
 
-    public static List<Order> GetAll()
-    {
-      return _instances;
-    }
-
     public static void ClearAll()
     {
       _instances.Clear();
     }
 
-    public static Order Find(int searchId)
+    public static List<Order> GetAll()
     {
-      return _instances[searchId - 1];
+      return _instances;
+    }
+
+    public static Order Find(int id)
+    {
+      return _instances[id - 1];
     }
   }
 }

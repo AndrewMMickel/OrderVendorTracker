@@ -4,25 +4,20 @@
   Layout = "_Layout";
 }
 
-<h3>Here are all the orders for @Model["vendor"].Name:</h3>
+<h1>Vendor Order Details: </h1>
 
-@if (@Model["orders"].Count == 0)
+<h3>Vendor: @Model["vendor"].Name</h3>
+<h4>Description: @Model["vendor"].Description</h4>
+@foreach (Order order in @Model["orders"])
 {
-    <h3>No orders have been added yet!</h3>
+  <ul>
+    <li>Order: <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+    <li>Description: @order.Description</li>
+    <li>Price: @order.Price</li>
+    <li>Date: @order.Date</li>
+  </ul>
 }
 
-<ol>
-    @foreach (Order order in @Model["orders"])
-    {
-        <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a> (@order.Date)</li>
-    }
-</ol>
-
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-
-<form action='/vendors/@Model["vendor"].Id/' method="post">
-    <button type="submit">Delete all orders belonging @Model["vendor"].Name</button>
-</form>
-
-<p><a href='/vendors'>Back to Vendors Page</a></p>
-<p><a href="/">Back to Home Page</a></p>
+<h5><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new Order</a></h5>
+<h5><a href='/vendors/new'>Add another Vendor</a></h5>
+<h5><a href='/vendors'>View all Vendors</a></h5>

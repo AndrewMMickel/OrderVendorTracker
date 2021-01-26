@@ -9,28 +9,25 @@ namespace VendorOrderTracker.Controllers
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
-      Vendor vendor = Vendor.Find(vendorId);
-      return View(vendor);
+      Vendor selectedVendor = Vendor.Find(vendorId);
+      return View(selectedVendor);
     }
 
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
-      Order order = Order.Find(orderId);
-      Vendor vendor = Vendor.Find(vendorId);
+      Order selectedOrder = Order.Find(orderId);
+      Vendor selectedVendor = Vendor.Find(vendorId);
       Dictionary<string, object> model = new Dictionary<string, object>();
-      model.Add("order", order);
-      model.Add("vendor", vendor);
+      model.Add("order", selectedOrder);
+      model.Add("vendor", selectedVendor);
       return View(model);
     }
 
-    [HttpPost("/vendors/{vendorId}/orders/{orderId}")]
-    public ActionResult Destroy(int vendorId, int orderId)
+    [HttpPost("/orders/delete")]
+    public ActionResult DeleteAll()
     {
-      Order foundorder=Order.Find(orderId);
-      Vendor foundVendor = Vendor.Find(vendorId);
-      foundVendor.DeleteOrder(foundorder);
-      
+      Order.ClearAll();
       return View();
     }
   }
