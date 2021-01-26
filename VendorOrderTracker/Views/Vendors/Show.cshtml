@@ -1,5 +1,9 @@
 @using VendorOrderTracker.Models;
 
+@{
+  Layout = "_Layout";
+}
+
 <h3>Here are all the orders for @Model["vendor"].Name:</h3>
 
 @if (@Model["orders"].Count == 0)
