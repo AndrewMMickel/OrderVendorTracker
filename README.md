@@ -24,6 +24,27 @@ _This is a program to simulate a tracker for baked goods, based on orders and th
 
 _No known bugs at the this time._
 
+### Specs
+
+| Spec                                            | Input                        | Output                        |
+| :---------------------------------------------- | :--------------------------- | :---------------------------- |
+| **Can make an instance of Order object** | `new Order()` | typeof(Order) = Order |
+| **Return given title** | "orderOne" | "orderOne" |
+| **Return given description** | "order description" | "order description" |
+| **Return given price** | `12` | `12` |
+| **Return given date** | "December 18 2020" | "December 18 2020" |
+| **Get all instances of Order** | `Order.GetAll()` | {Order, Order} |
+| **Get Id of Order** | orderInstance.Id | `2` |
+| **Find Order by Id** | `Order.Find(2)` | `Order` |
+| **Can make an instance of Vendor object** | `new Vendor()` | typeof(Vendor) = Vendor |
+| **Return given name** | "vendorOne" | "vendorOne" |
+| **Return given description** | "vendor description" | "vendor description" |
+| **Add Order to order list** | `newVendor.AddOrder(Order)` | newVendor.Orders[0] = Order |
+| **Get Order list** | `Vendor.Orders` | {Order, Order} |
+| **Get all instances of Vendor** | `Vendor.GetAll()` | {Vendor, Vendor} |
+| **Get Id of Vendor** | vendorInstance.Id | `2` |
+| **Find Vendor by Id** | `Vendor.Find(2)` | `Vendor` |
+
 ## Support and contact details
 
 _Please check the .csproj files to ensure the proper framework you are running and change if necessary as described in the Setup section_
@@ -34,6 +55,10 @@ _Any known issues, please reach out to Andrew Mickel at andrew.m.mickel@gmail.co
 
 * _C#_
 * _VS Code_
+* _.NET Core v 2.2_
+* _REPL_
+* _MSTest_
+* _ASP.NET_
 
 ## License
 
