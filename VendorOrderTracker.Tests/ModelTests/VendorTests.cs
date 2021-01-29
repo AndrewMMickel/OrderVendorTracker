@@ -44,7 +44,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void AddOrder_AddOrderToList_Order()
     {
-      Order newOrder = new Order("Title", "Description", 12, "Date");
+      Order newOrder = new Order("Title", "Description", 12, "12-8-2020");
       Vendor newVendor = new Vendor("Name", "Description");
 
       newVendor.AddOrder(newOrder);
@@ -55,9 +55,9 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void GetOrders_ReturnOrdersList_List()
     {
-      Order newOrderOne = new Order("Title", "Description", 12, "Date");
-      Order newOrderTwo = new Order("Title", "Description", 12, "Date");
-      Order newOrderThree = new Order("Title", "Description", 12, "Date");
+      Order newOrderOne = new Order("Title", "Description", 12, "12-8-2020");
+      Order newOrderTwo = new Order("Title", "Description", 12, "12-8-2020");
+      Order newOrderThree = new Order("Title", "Description", 12, "12-8-2020");
 
       Vendor newVendor = new Vendor("name", "description");
       List<Order> ordersList = new List<Order> {newOrderOne, newOrderTwo, newOrderThree};
