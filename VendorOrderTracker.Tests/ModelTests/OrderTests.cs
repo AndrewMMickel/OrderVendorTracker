@@ -16,7 +16,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void MakeOrder_CreateInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("title", "description", 12, "date");
+      Order newOrder = new Order("title", "description", 12, "Date");
       //string test = "string";
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
@@ -26,7 +26,7 @@ namespace VendorOrderTracker.Tests
     {
       string title = "TestTitle";
 
-      Order newOrder = new Order(title, "description", 12, "date");
+      Order newOrder = new Order(title, "description", 12, "Date");
 
       Assert.AreEqual(title, newOrder.Title);
     }
@@ -36,7 +36,7 @@ namespace VendorOrderTracker.Tests
     {
       string description = "TestDescription";
 
-      Order newOrder = new Order("title", description, 12, "date");
+      Order newOrder = new Order("title", description, 12, "Date");
 
       Assert.AreEqual(description, newOrder.Description);
     }
@@ -46,7 +46,7 @@ namespace VendorOrderTracker.Tests
     {
       int price = 12;
 
-      Order newOrder = new Order("title", "description", price, "date");
+      Order newOrder = new Order("title", "description", price, "Date");
 
       Assert.AreEqual(price, newOrder.Price);
     }
@@ -64,9 +64,9 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void OrderGetAll_GetAllInstancesOfOrder_List()
     {
-      Order newOrderOne = new Order("title", "description", 12, "date");
-      Order newOrderTwo = new Order("title", "description", 12, "date");
-      Order newOrderThree = new Order("title", "description", 12, "date");
+      Order newOrderOne = new Order("title", "description", 12, "Date");
+      Order newOrderTwo = new Order("title", "description", 12, "Date");
+      Order newOrderThree = new Order("title", "description", 12, "Date");
 
       List<Order> orderList = new List<Order> {newOrderOne, newOrderTwo, newOrderThree};
 
@@ -76,7 +76,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void GetId_ReturnOrderId_Int()
     {
-      Order newOrder = new Order("title", "description", 12, "date");
+      Order newOrder = new Order("title", "description", 12, "Date");
 
       Assert.AreEqual(1, newOrder.Id);
     }
@@ -84,8 +84,8 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void FindOrder_GetOrderFromIdNumber_Order()
     {
-      Order newOrderOne = new Order("titleOne", "description", 12, "date");
-      Order newOrderTwo = new Order("titleTwo", "description", 12, "date");
+      Order newOrderOne = new Order("titleOne", "description", 12, "Date");
+      Order newOrderTwo = new Order("titleTwo", "description", 12, "Date");
 
       Assert.AreEqual(newOrderTwo, Order.Find(2));
     }
